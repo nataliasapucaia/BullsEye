@@ -14,37 +14,36 @@ struct ContentView: View {
     @State private var game = Game()
 
     var body: some View {
-        VStack {
+        ZStack {
+            BackgroundView(game: $game)
+                .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE YOU CAN TO ")
-                    .bold()
-                    .kerning(2.0)
-                    .multilineTextAlignment(.center)
-                    .lineSpacing(4.0)
-                    .font(.footnote)
+                InstructionsView(game: $game).padding(.bottom, alertIsVisible ? 0 : 100.0)
+                if alertIsVisible {
+                    PointsView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
+                } else {
+                    HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+                        .transition(.scale)
+                }
             }
-            Text(String(game.target))
-                .kerning(-1.0)
-                .bold()
-                .font(.largeTitle)
-                .fontWeight(.black)
-            HStack {
-                Text("1")
-                    .font(.body)
-                    .bold()
-                Slider(value: $sliderValue, in: 1.0...100.0)
-                Text("100")
-                    .font(.body)
-                    .bold()
+            if !alertIsVisible {
+                SliderView(sliderValue: $sliderValue)
+                    .transition(.scale)
             }
-            Button("HIT ME") {
-                alertIsVisible = true
-            }.alert("Hello there!", isPresented: $alertIsVisible) {
-                Button("Awesome!") { }
-              } message: {
-                  let roundedValue: Int = Int(sliderValue.rounded())
-                  Text("The slider value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round.")
-              }
+        }
+    }
+}
+
+struct InstructionsView: View {
+    @Binding var game: Game
+
+    var body: some View {
+        VStack {
+            InstructionText(text: "🎯🎯🎯\nPUT THE BULLSEYE AS CLOSE YOU CAN TO ")
+                .padding(.leading, 30.0)
+                .padding(.trailing, 30.0)
+            BigNumberText(text: String(game.target))
         }
     }
 }
@@ -52,6 +51,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        ContentView().previewLayout(.fixed(width: 568, height: 320))
+        ContentView()
+            .previewLayout(.fixed(width: 568, height: 320))
+        ContentView()
+            .preferredColorScheme(.dark)
+        ContentView()
+            .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width: 568, height: 320))
     }
 }
