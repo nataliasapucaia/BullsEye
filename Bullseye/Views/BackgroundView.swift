@@ -23,6 +23,7 @@ struct BackgroundView: View {
 
 struct TopView: View {
     @Binding var game: Game
+    @State private var leaderboardIsShowing = false
 
     var body: some View {
         HStack {
@@ -32,7 +33,13 @@ struct TopView: View {
                 RoundedImageViewStroked(systemName: "arrow.counterclockwise")
             }
             Spacer()
-            RoundedImageViewFilled(systemName: "list.dash")
+            Button {
+                leaderboardIsShowing = true
+            } label: {
+                RoundedImageViewFilled(systemName: "list.dash")
+            }.sheet(isPresented: $leaderboardIsShowing) {
+                LeaderboardView(leaderboardIsShowing: $leaderboardIsShowing, game: $game)
+            }
         }
     }
 }
@@ -55,7 +62,7 @@ struct NumberView: View {
 
     var body: some View {
         VStack(spacing: 5) {
-            LabelText(text: title.uppercased())
+            LabelText(text: title)
             RoundRectTextView(value: value)
         }
     }

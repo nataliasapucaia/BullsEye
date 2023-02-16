@@ -20,6 +20,7 @@
 		D19759442996BA7700CA6051 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19759432996BA7700CA6051 /* BackgroundView.swift */; };
 		D1975946299AACF300CA6051 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1975945299AACF300CA6051 /* PointsView.swift */; };
 		D1975948299AE04700CA6051 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1975947299AE04700CA6051 /* Constants.swift */; };
+		D197594A299BB92C00CA6051 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1975949299BB92C00CA6051 /* LeaderboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		D19759432996BA7700CA6051 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		D1975945299AACF300CA6051 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
 		D1975947299AE04700CA6051 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1975949299BB92C00CA6051 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D197593F299530F600CA6051 /* HitMeButton.swift */,
 				D1975941299683D200CA6051 /* RoundViews.swift */,
 				D1975945299AACF300CA6051 /* PointsView.swift */,
+				D1975949299BB92C00CA6051 /* LeaderboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				D197592D29919BB600CA6051 /* Game.swift in Sources */,
 				D1975948299AE04700CA6051 /* Constants.swift in Sources */,
 				D1975940299530F600CA6051 /* HitMeButton.swift in Sources */,
+				D197594A299BB92C00CA6051 /* LeaderboardView.swift in Sources */,
 				D197591C2991401800CA6051 /* BullseyeApp.swift in Sources */,
 				D197593E29952F5500CA6051 /* SliderView.swift in Sources */,
 				D1975942299683D200CA6051 /* RoundViews.swift in Sources */,
@@ -402,6 +406,7 @@
 				DEVELOPMENT_TEAM = TR66A4HVVB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bull's Eye";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -431,6 +436,7 @@
 				DEVELOPMENT_TEAM = TR66A4HVVB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Bull's Eye";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
